@@ -1,1 +1,4 @@
 *.swp
+Makefile
+MYMETA.json
+MYMETA.yml
