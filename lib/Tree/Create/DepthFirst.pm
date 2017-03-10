@@ -1,9 +1,34 @@
+#_{ Encoding and name
+=encoding utf8
+=head1 NAME
+Tree::Create::DepthFirst - Create a Tree::Simple in the order as the created tree will traverse its nodes when traversing it depth first.
+=cut
 package Tree::Create::DepthFirst;
 
 use strict;
 use warnings;
 
+#_}
+#_{ Version
+=head1 VERSION
+Version 0.02
+=cut
 our $VERSION = '0.01';
+#_}
+#_{ Synopsis
+
+     use Tree::Create::DepthFirst;
+
+     my $tree_creator = Tree::Create::DepthFirst->new();
+     $tree_creator -> addNode(0, 'child 1');
+     $tree_creator -> addNode(0, 'child 2');
+     $tree_creator -> addNode(1, 'grand chhild 1');
+     $tree_creator -> addNode(1, 'grand chhild 2');
+     $tree_creator -> addNode(2, 'grand-grand chhild 2');
+
+     my $tree_simple = $tree_creator->getTree();
+
+#_}
 
 use Tree::Simple;
 
