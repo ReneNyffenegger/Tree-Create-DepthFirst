@@ -2,6 +2,7 @@
 Makefile
 MYMETA.json
 MYMETA.yml
-Tree-Create-DepthFirst-0.01.tar.gz
+Tree-Create-DepthFirst-*
 blib
 pm_to_blib
+pod2htmd.tmp

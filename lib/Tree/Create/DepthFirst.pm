@@ -11,28 +11,53 @@ use warnings;
 #_}
 #_{ Version
 =head1 VERSION
+
 Version 0.02
 =cut
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 #_}
 #_{ Synopsis
+=head1 SYNOPSIS
 
-     use Tree::Create::DepthFirst;
+=pod
 
-     my $tree_creator = Tree::Create::DepthFirst->new();
-     $tree_creator -> addNode(0, 'child 1');
-     $tree_creator -> addNode(0, 'child 2');
-     $tree_creator -> addNode(1, 'grand chhild 1');
-     $tree_creator -> addNode(1, 'grand chhild 2');
-     $tree_creator -> addNode(2, 'grand-grand chhild 2');
+ use Tree::Create::DepthFirst;
 
-     my $tree_simple = $tree_creator->getTree();
+ my $tree_creator = Tree::Create::DepthFirst->new();
+ $tree_creator -> addNode(0, 'child 1');
+ $tree_creator -> addNode(0, 'child 2');
+ $tree_creator -> addNode(1, 'grand chhild 1');
+ $tree_creator -> addNode(1, 'grand chhild 2');
+ $tree_creator -> addNode(2, 'grand-grand chhild 2');
 
+ my $tree_simple = $tree_creator->getTree();
+=cut
 #_}
 
 use Tree::Simple;
 
+#_{ Methods
+=head1 Methods
+=cut
+
 sub new { #_{
+
+=head2 new()
+
+Creates the tree creator.
+
+    my $tree_creator = Tree::Create::DepthFirst->new()
+
+From now on, you will want to call
+
+    $tree_creator->addNode(…);
+
+until the tree is finished. Then you get the created tree with
+
+    my $tree_simple = $tree_simple->getTree();
+
+=cut
+
 	my ($_class, $input) = @_;
 	my $class = ref($_class) || $_class;
 
@@ -46,6 +71,16 @@ sub new { #_{
 } #_}
 
 sub addNode { #_{
+
+=head2 addNode($depth, $nodeValue)
+
+Add tree nodes and leaves in the same order as a depth first traversal would traverse
+the tree.
+
+There are two restrictions on $depth: a) it must be greater or equal to 0. b) It must
+not be greater than the last added node's $depth+1.
+
+=cut
 
 #
 #    Note the similarity to parts of Tree::Parser's sub _parse
@@ -91,10 +126,35 @@ sub addNode { #_{
 
 sub getTree { #_{
 
+=head2 getTree()
+
+After building, getTree() returns the created tree (as a Tree::Simple) object.
+
+    $tree_simple = $tree_creator->getTree();
+
+=cut
+
   my $self      = shift;
 
   return $self->{tree};
 
 } #_}
+#_}
+#_{ More POD
+=head1 AUTHOR
+
+René Nyffenegger, C<< <rene.nyffenegger at adp-gmbh.ch> >>
+
+=head1 LICENSE
+
+According to the C<LICENSE> file that comes with the package.
+
+=head1 LINKS
+
+The source code is in L<this Github repository|https://github.com/ReneNyffenegger/Tree-Create-DepthFirst>
+
+=cut
+
+#_}
 
 "tq84";
