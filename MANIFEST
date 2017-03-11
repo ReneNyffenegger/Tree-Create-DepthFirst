@@ -1,5 +1,7 @@
 Changes
 LICENSE
+MANIFEST
+lib/Tree/Create/DepthFirst.pm
 Makefile.PL
 README
 t/10-version_01.t
