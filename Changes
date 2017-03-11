@@ -3,6 +3,9 @@
        t/10-version-01.t:
          depth is a number, not a string.
 
+       DephtFirst.pm
+         Add a link to »more examples«
+
 0.02   2017-03-11
 
        Fix MANIFEST

@@ -153,6 +153,8 @@ According to the C<LICENSE> file that comes with the package.
 
 The source code is in L<this Github repository|https://github.com/ReneNyffenegger/Tree-Create-DepthFirst>
 
+More examples are on my L<homepage|http://renenyffenegger.ch/notes/development/languages/Perl/modules/Tree/Create/DepthFirst/index>
+
 =cut
 
 #_}
