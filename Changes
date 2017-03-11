@@ -1,3 +1,8 @@
+0.03
+
+       t/10-version-01.t:
+         depth is a number, not a string.
+
 0.02   2017-03-11
 
        Fix MANIFEST
