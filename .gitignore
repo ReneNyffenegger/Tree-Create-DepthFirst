@@ -1,5 +1,6 @@
 *.swp
 Makefile
+Makefile.old
 MYMETA.json
 MYMETA.yml
 Tree-Create-DepthFirst-*
