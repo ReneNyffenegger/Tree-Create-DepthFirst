@@ -77,7 +77,7 @@ sub addNode { #_{
 Add tree nodes and leaves in the same order as a depth first traversal would traverse
 the tree.
 
-There are two restrictions on $depth: a) it must be greater or equal to 0. b) It must
+There are three restrictions on $depth: a) it must be a natural number. b) It must
 not be greater than the last added node's $depth+1.
 
 =cut
